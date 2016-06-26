@@ -1,0 +1,85 @@
+html,body{
+	background: #f5f5f5;
+}
+#login{
+	position: relative;
+}
+
+#login .loginInner{
+	width:800px;
+	height:600px;
+	background: #fff;
+	margin:0 auto;
+	margin-top: 30px;
+	text-align: center;
+	padding-top: 50px;
+	position: relative;
+}
+#login .loginInner .input{
+	border: 1px solid #ccc;
+	height:40px;
+	width:400px;
+	padding-left: 10px;
+}
+#login .loginInner .submit{
+	height:42px;
+	width:412px;
+	background: #ff6702;
+	color:#fff;
+	font:700 24px "";
+	cursor: pointer;
+	margin-top: 60px;
+}
+#login .loginInner input,#login .loginInner h1{
+	margin-top: 30px;
+}
+
+
+#login .loginInner p{
+	margin-top: 50px;
+}
+#login .loginInner img{
+	padding-top: 30px;
+	margin-left: 10px;
+	cursor: pointer;
+
+}
+.loginB{
+	margin:0 auto;
+	text-align: center;
+	margin-top: 30px;
+}
+.loginB p{
+	padding-top: 8px;
+	line-height: 24px;
+}
+.select {
+	border: 1px solid #ccc;
+	height:40px;
+	width:412px;
+	padding-left: 10px;
+}
+.select option{
+	line-height: 40px;
+}
+.yz{
+	border: 1px solid #ccc;
+	height:40px;
+	width:200px;
+	padding-left: 10px;
+	position: absolute;left: 194px;
+	top:364px;
+}
+.yzm{
+	border: 1px solid #ccc;
+	height:40px;
+	width:150px;
+	padding-left: 10px;
+	position: absolute;left: 443px;
+	top:394px;
+	cursor: pointer;
+	font-size: 24px;
+	line-height: 40px;
+	font-style: italic
+}
+

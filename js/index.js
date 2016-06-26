@@ -399,3 +399,25 @@ $("#main .main-video .main-video_content ul>li").on({
 })
 changeContentT($("#main .main-video .main-video_content ul>li"));
 changeContentB($("#main .main-video .main-video_content ul>li"))
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~视频结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	var isClick = false;
+$("#louti .louti-nav ul li").click(function(){
+	 isClick = true;
+	$("#louti .louti-nav ul li").find("span").attr("class","")
+	$(this).find("span").addClass("loutiActive");
+	var louti_top = $(".loutis").eq($(this).index()).offset().top;
+	$("html, body").stop().animate({scrollTop: louti_top}, 2000,function(){
+		isClick = false;
+	});
+})
+// $(window).scroll(function(){
+// 	var scroll_Top =$(window).scrollTop();
+// 	$(".loutis").each(function(){
+// 		if(scroll_Top>$(this).offset().top-$(this).outerHeight()/2){
+// 			// $("#louti .louti-nav ul li").find("span").attr("class","");
+// 			$("#louti .louti-nav ul li").find("span").eq($(this).index()).addClass("loutiActive");
+// 		}
+// 	})
+// })

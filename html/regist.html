@@ -2,22 +2,47 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>首页</title>
-	<link rel="stylesheet" href="../css/base.css">
-	<link rel="stylesheet" href="../css/common.css">
-	<link rel="stylesheet" href="../css/index.css">
+	<title>小米商城注册</title>
+	<link rel="stylesheet" href="../css/common/base.css">
+	<link rel="stylesheet" href="../css/common/common.css"/>
+	<link rel="stylesheet" href="../css/regist.css"/>
+	<link rel="stylesheet" type="text/css" href="../font-awesome-4.6.3/css/font-awesome.min.css"/>
 </head>
 <body>
-	<div id="header"></div>
-	<div id="main">这里是首页的内容</div>
-	<div id="footer"></div>
+	<div id="login">
+		<div class="loginInner">
+			<div class="logins">
+				<img src="../img/loge.jpg">
+				<h1>注册小米账号</h1>
+				<select class="select">
+					<option>
+					中国(+86)
+					</option>	
+					<option>台湾(+886)</option>
+					<option>中国香港(+852)</option>
+					<option>Brazil(+55)</option>
+					<option>India(+91)</option>
+					<option>Indonesia(+62)</option>
+					<option>Malaysia(+25)</option>
+				
+				</select>
+				<input type="text" class="input" placeholder="手机号码"><br/>
+				<input type="password" class="input" placeholder="密码"><br/>
+				<input type="text" class="yz" placeholder="验证码"> <div class="yzm f-arial"></div><br/>
+				<input type="submit" value="立即注册" class="submit">
+				<p>点击“立即注册”，即表示您同意并愿意遵守小米<strong> 用户协议</strong> 和 <strong>隐私政策</strong></p>
+			</div>
+		</div>
+		<div class="loginB">
+			<span>简体</span>|
+			<span>繁体</span>|
+			<span>English</span>|
+			<span>常见问题</span>
+			<p>小米公司版权所有-京ICP备10046444-<img src="../img/login-jg.png"/>-京公网备1101082020134号-京ICP证110507号</p>
+		</div>
+	</div>
 
-	<script src="../lib/jquery-1.12.3.js"></script>
-	<script src="../js/common.js"></script>
-	<script>
-			loadHtml("common/hearder.html", "header");
-			loadHtml("common/footer.html", "footer");
-	</script>
-	<script src="../js/index.js"></script>
+	<script src="../libs/jquery-1.12.3.js"></script>
+	<script src="../js/regist.js"></script>
 </body>
 </html>
