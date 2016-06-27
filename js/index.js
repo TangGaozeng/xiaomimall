@@ -135,15 +135,15 @@ changeBottom($("#main .main-intel_inner>.main-intel_innerR ul li"));
 function changeTop(changeTops){//改变容器的top值函数
 		var that = changeTops;
 			that.mouseenter(function(){
-				$(this).css({"margin-top":-10,
-				"box-shadow":" 0 15px 20px rgba(0,0,0,0.1)"});
+				$(this).css({"marginTop":-10,
+				"box-shadow":" 0 10px 20px rgba(0,0,0,0.1)"});
 			})
 }
 
 function changeBottom(changeBottoms){
 		var that = changeBottoms;
 			that.mouseleave(function(){
-				$(this).css({"margin-top":10,"box-shadow":"none"});
+				$(this).css({"marginTop":10,"box-shadow":"none"});
 			})
 }
 
@@ -412,12 +412,21 @@ $("#louti .louti-nav ul li").click(function(){
 		isClick = false;
 	});
 })
-// $(window).scroll(function(){
-// 	var scroll_Top =$(window).scrollTop();
-// 	$(".loutis").each(function(){
-// 		if(scroll_Top>$(this).offset().top-$(this).outerHeight()/2){
-// 			// $("#louti .louti-nav ul li").find("span").attr("class","");
-// 			$("#louti .louti-nav ul li").find("span").eq($(this).index()).addClass("loutiActive");
-// 		}
-// 	})
-// })
+$(window).scroll(function(){
+	var scroll_Top =$(window).scrollTop();
+	$(".loutis").each(function(){
+		if(scroll_Top>$(this).offset().top-$(this).outerHeight()/2){
+			$("#louti .louti-nav ul li").find("span").attr("class","");
+			$("#louti .louti-nav ul li").find("span").eq($(this).index(".loutis")).addClass("loutiActive");
+		}
+	})
+})
+
+var user = $.cookie("name")
+var loginName = JSON.parse(user)["userName"]
+if(loginName){
+	// $(".loginName").css("display","block")
+	$(".loginName").html(loginName + "您好,欢迎来到小米商城")
+}else{
+	$(".loginName").css("display","none")
+}

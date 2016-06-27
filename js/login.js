@@ -12,3 +12,17 @@ $("#login .login-er img").click(function(){
 	}
 	
 })
+
+
+$("input:eq(2)").click(function(){
+	var user = $.cookie("name")
+	if($("input:eq(0)").val() == JSON.parse(user)["userName"]&&$("input:eq(1)").val() == JSON.parse(user)["pass"]){
+		location.href = "index.html"
+	}else{
+		$(".loginer").css("display","block")
+	}
+
+})
+
+
+

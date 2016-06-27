@@ -69,3 +69,9 @@ html,body{
 .logins a:hover{
 	color:#ff6702;
 }
+.loginer{
+	position: relative;left: 10px;
+	top:18px;
+	color: red;font-size: 18px;
+	display: none;
+}

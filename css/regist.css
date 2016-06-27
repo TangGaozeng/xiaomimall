@@ -35,9 +35,9 @@ html,body{
 }
 
 
-#login .loginInner p{
+/*#login .loginInner p{
 	margin-top: 50px;
-}
+}*/
 #login .loginInner img{
 	padding-top: 30px;
 	margin-left: 10px;
@@ -83,3 +83,21 @@ html,body{
 	font-style: italic
 }
 
+.modle{
+	position: absolute;left: 626px;
+	top:272px;
+	display: none;
+	color: red;
+}
+.password{
+	position: absolute;left: 626px;
+	top:350px;
+	display: none;
+	color: red;
+}
+.yzmy{
+	position: absolute;left: 626px;
+	top:408px;
+	display: none;
+	color: red;
+}
