@@ -19,7 +19,7 @@ $("#gw-x").mouseleave(function(){
 	$(this).css("display","none")
 })
 
-//头部购物车
+// //头部购物车
 
 
 $("li").each(function(index) {
@@ -50,7 +50,10 @@ $(".search-l").bind({"focus ":function(){
 }})
 
 var user = $.cookie("name")
-var loginName = JSON.parse(user)["userName"]
+var loginName = {}
+if(user) {
+	loginName = JSON.parse(user)["userName"]
+}
 if(loginName){
 	// $(".loginName").css("display","block")
 	$(".loginName").html(loginName + "您好,欢迎来到小米商城")
@@ -124,8 +127,64 @@ $(".more-2").click(function(){
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~内容~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-$(".inner-all").find("span").each(function(i){
-	$(".inner-all").find("span").eq(i).click(function(){
-		$("#inner .divs").animate({left:i*-200},300)
+
+function Inner(obj,divs,ff){
+	$(obj).find("span").each(function(i){
+		$(obj).find("span").eq(i).mouseenter(function(){
+			$(this).css("borderColor","red")
+			$(divs).animate({left:i*-200},300)
+		})
+		$(obj).find("span").mouseleave(function(){
+			$(this).css("borderColor","#666")
+		})
+		
 	})
+
+	$(ff).mouseenter(function(){
+		$(this).css("color","#ff6702")
+		$(ff).parent().find("a").css("display","block")
+	})
+	$(ff).mouseleave(function(){
+		$(this).css("color","#000")
+		$(ff).parent().find("a").css("display","none")
+	})
+	$(obj).on({mouseenter:function(){
+			$(obj).find("i").css("display","block")
+		},
+		mouseleave:function(){
+			$(obj).find("i").css("display","none")
+		}
+	})
+}
+
+Inner(".inner-all .lier",".divs",".f1");
+Inner(".inner-all .lier1",".divs1",".f2");
+Inner(".inner-all .lier2",".divs2",".f3");
+Inner(".inner-all .lier3",".divs3",".f4");
+Inner(".inner-all .lier4",".divs4",".f5");
+Inner(".inner-all .lier5",".divs5",".f6");
+Inner(".inner-all .lier6",".divs6",".f7");
+Inner(".inner-all .lier7",".divs7",".f8");
+Inner(".inner-all .lier8",".divs8",".f9");
+Inner(".inner-all .lier9",".divs9",".f10");
+Inner(".inner-all .lier10",".divs10",".f11");
+Inner(".inner-all .lier11",".divs11",".f12");
+Inner(".inner-all .lier12",".divs12",".f13");
+Inner(".inner-all .lier13",".divs13",".f14");
+Inner(".inner-all .lier14",".divs14",".f15");
+Inner(".inner-all .lier15",".divs15",".f16");
+Inner(".inner-all .lier16",".divs16",".f17");
+Inner(".inner-all .lier17",".divs17",".f18");
+Inner(".inner-all .lier18",".divs18",".f19");
+Inner(".inner-all .lier19",".divs19",".f20");
+
+		$(".inner-bo").find("span").click(function(index){
+			
+			$(".inner-bo").find("span").css("borderColor","#930")
+			$(this).css("borderColor","blue");
+
+			$(".inner-bo .tuijian ul").animate({left:($(this).index()-2)*-1250},300)
+		})
+$("#inner .inner-all li img").click(function(){
+	location.href = "goodsDetail.html"
 })

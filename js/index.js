@@ -423,10 +423,18 @@ $(window).scroll(function(){
 })
 
 var user = $.cookie("name")
-var loginName = JSON.parse(user)["userName"]
+var loginName = {}
+if(user) {
+	loginName = JSON.parse(user)["userName"]
+}
 if(loginName){
 	// $(".loginName").css("display","block")
 	$(".loginName").html(loginName + "您好,欢迎来到小米商城")
 }else{
 	$(".loginName").css("display","none")
 }
+
+
+$("li").click(function(){
+	location.href = "goodsList.html"
+})
