@@ -49,16 +49,18 @@ $(".search-l").bind({"focus ":function(){
 	$("#search-big").css("display","none")
 }})
 
-var user = $.cookie("name")
+//获取COOKIE
 var loginName = {}
-if(user) {
-	loginName = JSON.parse(user)["userName"]
-}
-if(loginName){
-	// $(".loginName").css("display","block")
+if($.cookie("name")) {
+	var user = $.cookie("name")
+ 	loginName = JSON.parse(user)["userName"]	
+ 	$(".loginName").css("display","block")
 	$(".loginName").html(loginName + "您好,欢迎来到小米商城")
-}else{
-	$(".loginName").css("display","none")
+	$(".loginer1,.loginer2").css("display","none")
+}
+else{
+ 	$(".loginName").css("display","none")
+ 	$(".loginer1,.loginer2").css("display","block")
 }
 
 
@@ -185,6 +187,43 @@ Inner(".inner-all .lier19",".divs19",".f20");
 
 			$(".inner-bo .tuijian ul").animate({left:($(this).index()-2)*-1250},300)
 		})
+	
 $("#inner .inner-all li img").click(function(){
 	location.href = "goodsDetail.html"
 })
+
+
+
+var img =$(".inner-all .lier .lier-Img img").eq(0).attr("src"); ;
+
+	$(".inner-all .lier .lier-Img span").each(function(){
+		$(this).mouseenter(function(e){
+			var e = window.event||e;
+			e.preventDefault();
+			console.log($(this).index());
+			photo = $(this).index()
+			img = $(".inner-all .lier .divs img").eq(photo).attr("src");
+		});
+	});
+
+var num = 1;
+var texts = $(".inner-all .lier p:eq(0)").text();
+var jia = $(".inner-all .lier p:eq(1)").text();
+$(".lier .gw .f1").click(function(){
+	var goods1 = $.cookie("carts1")?JSON.parse($.cookie('carts1')):{};
+	if(num in goods1){
+		goods1[num].num++;
+	}else{
+		goods1[num] = {
+			pic:img,
+			name:texts,
+			num:1,
+			price:jia
+		}
+	}
+	$.cookie("carts1",JSON.stringify(goods1),{expires:30,path:"/"})
+	location.href = "shopCar.html"
+})
+
+
+

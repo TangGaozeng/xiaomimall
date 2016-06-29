@@ -204,7 +204,7 @@ height:1850px;
 	float:left;
 	width:34px;
 	height:34px;
-	background:url(../img/goodsList-1x.jpg);
+/*	background:url(../img/goodsList-1x.jpg);*/
 	margin-left: 24px;
 	border: 1px solid #666;
 	margin-bottom: 10px;
@@ -272,3 +272,4 @@ height:1850px;
 .inner-bo span:hover{
 	background:red;
 }
+

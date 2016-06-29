@@ -422,18 +422,19 @@ $(window).scroll(function(){
 	})
 })
 
-var user = $.cookie("name")
-var loginName = {}
-if(user) {
-	loginName = JSON.parse(user)["userName"]
-}
-if(loginName){
-	// $(".loginName").css("display","block")
-	$(".loginName").html(loginName + "您好,欢迎来到小米商城")
-}else{
-	$(".loginName").css("display","none")
-}
 
+var loginName = {}
+if($.cookie("name")) {
+	var user = $.cookie("name")
+ 	loginName = JSON.parse(user)["userName"]	
+ 	$(".loginName").css("display","block")
+	$(".loginName").html(loginName + "&nbsp;&nbsp;&nbsp;&nbsp;您好,欢迎来到小米商城")
+	$(".loginer1,.loginer2").css("display","none")
+}
+else{
+ 	$(".loginName").css("display","none")
+ 	$(".loginer1,.loginer2").css("display","block")
+}
 
 $("li").click(function(){
 	location.href = "goodsList.html"

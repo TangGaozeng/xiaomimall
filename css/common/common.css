@@ -200,9 +200,21 @@
 }
 
 .loginName{
+	font-size: 16px;
+	position: absolute;
+	left:660px;top:0px;
+}
 
-	color:red;
-	font-size: 14px;
+
+.loginer1{
+	position: absolute;
+	left: 1100px;
+	top:0px;
+}
+.loginer2{
+	position: absolute;
+	left: 1140px;
+	top:0px;
 }
 
 

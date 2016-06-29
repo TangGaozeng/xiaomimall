@@ -18,7 +18,7 @@
 	background-color: rgba(0, 0, 0, 0.5);
 	height:460px;
 	display: none;
-	z-index: 2
+	z-index: 10;
 }
 #main .menu-l ul{
 margin:10px 0;
@@ -44,7 +44,7 @@ margin:10px 0;
 	position: absolute;
 	top:-20px;left:164px;
 	background:#fff;
-	z-index: 3;
+	z-index: 10;
 	height:460px;
 	display: none;
 }
@@ -250,4 +250,76 @@ font-size: 18px}
 	padding:10px 50px;
 	color:#666;
 	font:700 20px "";
+}
+
+#addShoping{
+	height:540px;
+	background:#f5f5f5;
+	display: none;
+}
+#addShoping .addShoping-title{
+	background: #fff;
+}
+#addShoping .addShoping-title span{
+line-height: 110px;
+}
+#addShoping .addShoping-title a{
+	background: #ff6702;
+	border:10px solid #ff6702;
+	line-height: 110px;
+	margin-left: 20px;
+	color:#fff;
+}
+
+.inner-bo {
+	height:800px;
+	z-index: 10;
+}
+.bo-tilte{
+	text-align: center;
+}
+.bo-tilte p{
+	font:700 30px "";
+	line-height: 76px;
+}
+.inner-bo .tuijian{
+	width:1200px;
+	overflow: hidden;
+}
+.inner-bo ul{
+	width:5080px;
+	position: relative;
+	left: 0;
+	z-index: 8;
+}
+.inner-bo li{
+	margin-left: 20px;
+	float:left;
+	width:227px;
+	text-align: center;
+	background: #fff;
+}
+.tuijian h3{
+	line-height: 100px;
+}
+.tuijian p{
+	font-size:18px;
+	color: #ff6702;
+}
+.inner-bo span{
+	display: block;
+	height:10px;
+	width:10px;
+	border-radius: 50%;
+	background: #666;
+	z-index: 8;
+	float:left;
+	position: relative;
+	left:50%;
+	margin-left:12px; 
+	margin-top: 60px;
+	border: 3px solid #930;
+}
+.inner-bo span:hover{
+	background:red;
 }

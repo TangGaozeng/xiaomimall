@@ -109,6 +109,20 @@ $(".menu-r").mouseleave(function(){
 	$(".menu-l").css("display","none")
 })
 
+//显示已经创建的cookie
+var loginName = {}
+if($.cookie("name")) {
+	var user = $.cookie("name")
+ 	loginName = JSON.parse(user)["userName"]	
+ 	$(".loginName").css("display","block")
+	$(".loginName").html(loginName + "您好,欢迎来到小米商城")
+	$(".loginer1,.loginer2").css("display","none")
+}
+else{
+ 	$(".loginName").css("display","none")
+ 	$(".loginer1,.loginer2").css("display","block")
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~头部~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $(".inner-title span:eq(3)").click(function(){
 	$(this).css("color","#ff6702").siblings().css("color","#000");
@@ -119,4 +133,62 @@ $(".inner-title span:eq(2)").click(function(){
 	$(this).css("color","#ff6702").siblings().css("color","#000");
 	$("#inner").css("display","none");
 	$("#parameter").css("display","block")
+})
+$(".inner-title a:eq(0)").click(function(){
+	if($.cookie("name")){
+		$("#inner").css("display","none");
+			$("#parameter").css("display","none")
+			$("#addShoping").css("display","block")
+			var goodsPic = "../img/goodsDetail-gw.jpg";
+			var goodsName = "小米圈铁耳机";
+			var goodsPrice = "99元";
+			var goods = {
+				pic:goodsPic,
+				name:goodsName,
+				price:goodsPrice
+			}
+			$.cookie("carts",JSON.stringify(goods),{expires:30,path:'/'})
+	}else{
+		location.href = "login.html"
+	}
+})
+
+
+
+$(".addShoping-title span:eq(0)").css({
+	fontSize:"20px"
+})
+
+$(".addShoping-title span:eq(1)").css({
+	font:"700 28px ''",color:"green"
+})
+
+
+$(".lis1-er a").click(function(){
+	if($.cookie("name")){
+		$("#inner").css("display","none");
+			$("#parameter").css("display","none")
+			$("#addShoping").css("display","block")
+			var goodsPic = "../img/goodsDetail-gw.jpg";
+			var goodsName = "小米圈铁耳机";
+			var goodsPrice = "99元";
+			var goods = {
+				pic:goodsPic,
+				name:goodsName,
+				price:goodsPrice
+			}
+			$.cookie("carts",JSON.stringify(goods),{expires:30,path:'/'})
+	}else{
+		location.href = "login.html"
+	}
+	
+})
+
+
+$(".inner-bo").find("span").click(function(index){
+			
+	$(".inner-bo").find("span").css("borderColor","#930")
+	$(this).css("borderColor","blue");
+
+	$(".inner-bo .tuijian ul").animate({left:($(this).index()-2)*-1250},300)
 })

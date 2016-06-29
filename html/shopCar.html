@@ -2,22 +2,54 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>首页</title>
-	<link rel="stylesheet" href="../css/base.css">
-	<link rel="stylesheet" href="../css/common.css">
-	<link rel="stylesheet" href="../css/index.css">
+	<title>购物车</title>
+	<link rel="stylesheet" href="../css/common/base.css">
+	<link rel="stylesheet" href="../css/common/common.css"/>
+	<link rel="stylesheet" href="../css/shopCar.css"/>
+	<link rel="stylesheet" href="../css/common/slide.css" />
+	<link rel="stylesheet" type="text/css" href="../font-awesome-4.6.3/css/font-awesome.min.css"/>
 </head>
 <body>
-	<div id="header"></div>
-	<div id="main">这里是首页的内容</div>
+	<div id="header">
+		<div >
+			<img src="../img/loge.jpg">
+			<span>我的购物车</span>温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算
+		</div>
+	</div>
+	<div id="main">
+		<div class="wid-1200" >
+			<table>
+				<tr style="color:#666">
+					<td></td>
+					<td style="width:400px;">商品名称</td>
+					<td>单价</td>
+					<td>数量</td>
+					<td>小计</td>
+					<td>操作</td>
+				</tr>
+				<tr>
+					<td class="td1"><img src=""></td>
+					<td style="width:400px;" class="td2"></td>
+					<td class="td3"></td>
+					<td class="td4"></td>
+					<td class="td5"></td>
+					<td class="td6"></td>
+				</tr>
+				<tr class="trs">
+				</tr>
+				
+			</table>
+			<p><a href="">去结算</a></p>
+		</div>
+	</div>
 	<div id="footer"></div>
 
-	<script src="../lib/jquery-1.12.3.js"></script>
-	<script src="../js/common.js"></script>
+	<script src="../libs/jquery-1.12.3.js"></script>
+	<script src="../js/common/common.js"></script>	
+	<script src="../libs/jquery.cookie.js"></script>
 	<script>
-			loadHtml("common/hearder.html", "header");
 			loadHtml("common/footer.html", "footer");
 	</script>
-	<script src="../js/index.js"></script>
+	<script src="../js/shopCar.js"></script>
 </body>
 </html>
