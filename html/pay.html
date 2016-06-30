@@ -3,21 +3,75 @@
 <head>
 	<meta charset="UTF-8">
 	<title>首页</title>
-	<link rel="stylesheet" href="../css/base.css">
-	<link rel="stylesheet" href="../css/common.css">
-	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/common/base.css">
+	<link rel="stylesheet" href="../css/common/common.css"/>
+	<link rel="stylesheet" href="../css/pay.css"/>
+	<link rel="stylesheet" href="../css/common/slide.css" />
+	<link rel="stylesheet" type="text/css" href="../font-awesome-4.6.3/css/font-awesome.min.css"/>
 </head>
 <body>
-	<div id="header"></div>
-	<div id="main">这里是首页的内容</div>
+	<div id="header">
+		<div class="header-inner wid-1200">
+			<div class="fl inner-l"><img src="../img/loge.jpg" alt="" /><span>确认订单</span></div>
+			<div class="fr inner-r"><span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>我的订单</span></div>
+		</div>
+	</div>
+	<div id="main">
+		<div class="main-inner wid-1200" >
+			<ul>
+				<li>
+					
+					<p>收货地址<br/>
+						<span>
+							雷军<br/>
+						13548636500<br/>
+						北京市小米总部CEO办公室
+						</span>
+					</p>
+				</li>
+				<li>
+					<p>在线支付 <span>（支持支付宝、银联、财付通、小米钱包等）</span></p>
+				</li>
+				<li>
+					<p>在线支付 <span>（支持支付宝、银联、财付通、小米钱包等）</span></p>
+				</li>
+				<li>
+					<p>配送方式 <span>快递配送（运费 10 元）</span></p>
+				</li>
+				<li class="clear back"><p class="fl">商品</p>
+					<p class="fr"><a href="shopCar.html">返回购物车</a></p></li>
+				<li>
+					<table>
+						<tr class="trs1">
+							<td class="td1"><img src="" alt="" /></td>
+							<td class="td2"></td>
+							<td class="td3"></td>
+							<td class="td4"></td>
+							<td class="td5"></td>
+							<td class="td6"></td>
+						</tr>
+						<tr class="trs">
+							
+						</tr>
+					</table>
+				</li>
+				<li class="totaler">
+					<h2>应付总额：</h2><br/>
+					<h1 class="spans">
+					</h1><br/><br/>
+					<a href="">支付</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 	<div id="footer"></div>
 
-	<script src="../lib/jquery-1.12.3.js"></script>
-	<script src="../js/common.js"></script>
+	<script src="../libs/jquery-1.12.3.js"></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../libs/jquery.cookie.js"></script>
 	<script>
-			loadHtml("common/hearder.html", "header");
 			loadHtml("common/footer.html", "footer");
 	</script>
-	<script src="../js/index.js"></script>
+	<script src="../js/pay.js"></script>
 </body>
 </html>
