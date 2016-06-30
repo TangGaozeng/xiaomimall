@@ -439,3 +439,52 @@ else{
 $("li").click(function(){
 	location.href = "goodsList.html"
 })
+
+
+
+
+//首页购物车改变文字
+
+var goods1 = ($.cookie('carts1'))?JSON.parse($.cookie('carts1')):{};
+var goods = ($.cookie('carts'))?JSON.parse($.cookie('carts')):{};
+var htmls = "";
+	
+
+if(JSON.stringify(goods1) != "{}"){
+	htmls+="已选商品："+goods1[1].name
+	$("#gw-x p").text(htmls)
+	$(".site-gw a:eq(1)").html(1)
+	$(".site-gw a:eq(1)").css("color","red")
+}
+if(JSON.stringify(goods) != "{}"){
+	htmls+="已选商品："+goods.name;
+	$("#gw-x p").text(htmls)
+	$(".site-gw a:eq(1)").html(1)
+	$(".site-gw a:eq(1)").css("color","red")
+}
+if(JSON.stringify(goods1) != "{}"&&JSON.stringify(goods) != "{}"){
+	htmls=""
+	htmls+="已选商品："+goods1[1].name+"+"+goods.name;
+	$("#gw-x p").text(htmls);
+	$(".site-gw a:eq(1)").text(2)
+	$(".site-gw a:eq(1)").css("color","red")
+}
+
+
+//下面吸顶效果
+$(window).scroll(function(){
+			var scrolld = $(window).scrollTop();
+			var fixd = $("#main").offset().top
+			// var fixTop = $("#container").offset().top;
+			console.log(fixd);
+			if(scrolld>fixd){
+				// $("#fix").css("display","block")
+				$("#xiding").stop().fadeIn(600);
+			}else{
+				$("#xiding").fadeOut(600);
+			}
+})
+
+$("#Top i").click(function(){
+	$("html,body").animate({scrollTop:0},800)
+})

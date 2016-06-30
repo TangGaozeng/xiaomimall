@@ -141,11 +141,12 @@ $(".inner-title a:eq(0)").click(function(){
 			$("#addShoping").css("display","block")
 			var goodsPic = "../img/goodsDetail-gw.jpg";
 			var goodsName = "小米圈铁耳机";
-			var goodsPrice = "99元";
+			var goodsPrice = 99;
 			var goods = {
 				pic:goodsPic,
 				name:goodsName,
-				price:goodsPrice
+				price:goodsPrice,
+				num:1
 			}
 			$.cookie("carts",JSON.stringify(goods),{expires:30,path:'/'})
 	}else{
@@ -171,11 +172,12 @@ $(".lis1-er a").click(function(){
 			$("#addShoping").css("display","block")
 			var goodsPic = "../img/goodsDetail-gw.jpg";
 			var goodsName = "小米圈铁耳机";
-			var goodsPrice = "99元";
+			var goodsPrice = 99;
 			var goods = {
 				pic:goodsPic,
 				name:goodsName,
-				price:goodsPrice
+				price:goodsPrice,
+				num:1,
 			}
 			$.cookie("carts",JSON.stringify(goods),{expires:30,path:'/'})
 	}else{
@@ -192,3 +194,31 @@ $(".inner-bo").find("span").click(function(index){
 
 	$(".inner-bo .tuijian ul").animate({left:($(this).index()-2)*-1250},300)
 })
+
+
+//首页购物车改变文字
+
+var goods1 = ($.cookie('carts1'))?JSON.parse($.cookie('carts1')):{};
+var goods = ($.cookie('carts'))?JSON.parse($.cookie('carts')):{};
+var htmls = "";
+	
+
+if(JSON.stringify(goods1) != "{}"){
+	htmls+="已选商品："+goods1[1].name
+	$("#gw-x p").text(htmls)
+	$(".site-gw a:eq(1)").html(1)
+	$(".site-gw a:eq(1)").css("color","red")
+}
+if(JSON.stringify(goods) != "{}"){
+	htmls+="已选商品："+goods.name;
+	$("#gw-x p").text(htmls)
+	$(".site-gw a:eq(1)").html(1)
+	$(".site-gw a:eq(1)").css("color","red")
+}
+if(JSON.stringify(goods1) != "{}"&&JSON.stringify(goods) != "{}"){
+	htmls=""
+	htmls+="已选商品："+goods1[1].name+"+"+goods.name;
+	$("#gw-x p").text(htmls);
+	$(".site-gw a:eq(1)").text(2)
+	$(".site-gw a:eq(1)").css("color","red")
+}

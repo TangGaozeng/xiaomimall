@@ -167,11 +167,14 @@ height:1850px;
 	width:200px;
 	overflow: hidden;
 	background: #fff;
-	position: relative;	
+	position: relative;
 	float:left;
-	margin:20px 20px;
+	margin: 14px;
 	cursor: pointer;
 }
+/*#inner .inner-all .lier{
+	margin-left: -30px;
+}*/
 #inner .inner-all li .divs,#inner .inner-all li .divs1,#inner .inner-all li .divs2,
 #inner .inner-all li .divs3,#inner .inner-all li .divs4,#inner .inner-all li .divs5,
 #inner .inner-all li .divs6,#inner .inner-all li .divs7,#inner .inner-all li .divs8,
@@ -182,7 +185,6 @@ height:1850px;
 	width:600px;
 	position: relative;
 	text-align: center;
-
 }
 #inner .inner-all li .gw i{
 	position: absolute;
@@ -204,7 +206,6 @@ height:1850px;
 	float:left;
 	width:34px;
 	height:34px;
-/*	background:url(../img/goodsList-1x.jpg);*/
 	margin-left: 24px;
 	border: 1px solid #666;
 	margin-bottom: 10px;

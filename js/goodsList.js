@@ -194,7 +194,7 @@ $("#inner .inner-all li img").click(function(){
 
 
 
-var img =$(".inner-all .lier .lier-Img img").eq(0).attr("src"); ;
+var img =$(".inner-all .lier .divs img").eq(0).attr("src"); ;
 
 	$(".inner-all .lier .lier-Img span").each(function(){
 		$(this).mouseenter(function(e){
@@ -210,20 +210,51 @@ var num = 1;
 var texts = $(".inner-all .lier p:eq(0)").text();
 var jia = $(".inner-all .lier p:eq(1)").text();
 $(".lier .gw .f1").click(function(){
-	var goods1 = $.cookie("carts1")?JSON.parse($.cookie('carts1')):{};
-	if(num in goods1){
-		goods1[num].num++;
-	}else{
-		goods1[num] = {
-			pic:img,
-			name:texts,
-			num:1,
-			price:jia
+	if($.cookie("name")){
+		var goods1 = $.cookie("carts1")?JSON.parse($.cookie('carts1')):{};
+		if(num in goods1){
+			goods1[num].num++;
+		}else{
+			goods1[num] = {
+				pic:img,
+				name:texts,
+				num:1,
+				price:jia
+			}
 		}
+		$.cookie("carts1",JSON.stringify(goods1),{expires:30,path:"/"})
+		location.href = "shopCar.html"
+	}else{
+		location.href = "login.html"
 	}
-	$.cookie("carts1",JSON.stringify(goods1),{expires:30,path:"/"})
-	location.href = "shopCar.html"
+	
 })
 
 
+//首页购物车改变文字
+
+var goods1 = ($.cookie('carts1'))?JSON.parse($.cookie('carts1')):{};
+var goods = ($.cookie('carts'))?JSON.parse($.cookie('carts')):{};
+var htmls = "";
+	
+
+if(JSON.stringify(goods1) != "{}"){
+	htmls+="已选商品："+goods1[1].name
+	$("#gw-x p").text(htmls)
+	$(".site-gw a:eq(1)").html(1)
+	$(".site-gw a:eq(1)").css("color","red")
+}
+if(JSON.stringify(goods) != "{}"){
+	htmls+="已选商品："+goods.name;
+	$("#gw-x p").text(htmls)
+	$(".site-gw a:eq(1)").html(1)
+	$(".site-gw a:eq(1)").css("color","red")
+}
+if(JSON.stringify(goods1) != "{}"&&JSON.stringify(goods) != "{}"){
+	htmls=""
+	htmls+="已选商品："+goods1[1].name+"+"+goods.name;
+	$("#gw-x p").text(htmls);
+	$(".site-gw a:eq(1)").text(2)
+	$(".site-gw a:eq(1)").css("color","red")
+}
 

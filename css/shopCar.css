@@ -21,7 +21,7 @@ height:500px;
 #main div{
 	margin: 0 auto;
 	background:#fff;
-	height: 200px;
+	height: 224px;
 	position: relative;
 	top:40px;
 }
@@ -49,15 +49,48 @@ height:500px;
 }*/
 .picer{
 	width:104px;
-	height:80px;
+	height:104px;
+}
+.trs1{
+	font:700 20px "";
+	color: #666;
+	border-bottom: 1px solid #666;
+	padding-top: 8px;
+}
+.trs{
+	border-top: 1px solid #666;
+	margin-top: 8px;
 }
 .nums{
 	font-size: 20px;
+}
+.f2,.f5{
+	margin-left: 10px;
+	cursor: pointer;
+}
+.f1,.f4{
+	margin-right: 10px;
+	cursor: pointer;
+}
+.f3,.f6{
+	cursor: pointer;
+}
+.f3:hover,.f6:hover{
 	color:red;
 }
-.f2{
-	margin-left: 10px;
+
+#main .total{
+	width: 400px;
+	height:40px;
+	position: absolute;
+	left:646px;
+	top:390px;
+	z-index: 10;
+	line-height: 40px;
+	font-size: 24px;
+	color:#ff6702;
+	text-align: center;
 }
-.f1{
-	margin-right: 10px;
+#main .total span{
+	font-size: 30px;
 }

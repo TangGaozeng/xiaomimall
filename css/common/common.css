@@ -25,7 +25,7 @@
 #gw-x{
 	position: absolute;top:0;right:0;box-shadow: 0 0 10px #ccc;display:none;
 	height:98px;width:200px;
-	line-height: 98px;
+	line-height: 30px;
 	text-align: center;
 	background:white;
 	z-index: 2;
