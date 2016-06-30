@@ -96,3 +96,43 @@ $(".trs2 .f6").click(function(){
 	$(".trs2").parent().find(".trs2").remove();
 	$.cookie("carts",JSON.stringify(goods),{expires:-1,path:"/"})
 })
+
+var pay = $(".td4 span").html();
+var pay1 = $(".nums span").html();
+var total = $(".total span").html();
+
+$("#main p a").click(function(){
+	var payMoney = $.cookie("money")?JSON.parse($.cookie("money")):{};
+	payMoney = {
+		pays:pay,
+		pays1:pay1,
+		zong:total	
+	}
+	$.cookie("qian",JSON.stringify(payMoney),{expires:30,path:"/"})
+})
+
+
+
+var num = 1;
+var texts = $(".inner-all .lier p:eq(0)").text();
+var jia = $(".inner-all .lier p:eq(1)").text();
+$(".lier .gw .f1").click(function(){
+	if($.cookie("name")){
+		var goods1 = $.cookie("carts1")?JSON.parse($.cookie('carts1')):{};
+		if(num in goods1){
+			goods1[num].num++;
+		}else{
+			goods1[num] = {
+				pic:img,
+				name:texts,
+				num:1,
+				price:jia
+			}
+		}
+		$.cookie("carts1",JSON.stringify(goods1),{expires:30,path:"/"})
+		location.href = "shopCar.html"
+	}else{
+		location.href = "login.html"
+	}
+	
+})
