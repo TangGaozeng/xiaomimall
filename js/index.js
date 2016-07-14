@@ -1,7 +1,7 @@
 $(".site-gw").mouseover(function(){
 	$(this).css("background","#fff")
 	$(".site-gw>a").css("color","#ff6702")
-	$("#gw-x").css("background","block").slideDown(500);
+	$("#gw-x").slideDown(500);
 })
 $(".site-gw").mouseleave(function(){
 	$(this).css("background","#323335")
